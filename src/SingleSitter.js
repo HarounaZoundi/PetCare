@@ -27,7 +27,7 @@ class SingleSitter extends React.Component{
     <h3>Facebook Id:</h3>
     <p>{sitter.fbLink}</p>
   </div>
-  <button onClick={handleClick}>Aprrove</button>
+  <button onClick={this.handleClick}>Aprrove</button>
   </main>
 
 )

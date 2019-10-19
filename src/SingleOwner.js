@@ -27,7 +27,7 @@ class SingleOwner extends React.Component{
     <h3>Facebook Id:</h3>
     <p>{owner.fbId}</p>
   </div>
-  <button onClick={handleClick}>Request</button>
+  <button onClick={this.handleClick}>Request</button>
   </main>
 
 )

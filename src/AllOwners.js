@@ -32,7 +32,7 @@ return ({
 
 const mapDispatchToProps = dispatch=>(
  {getOwners:()=>dispatch(getOwners()),
-  getSitter: ()=>dispatch(getSitter(sitterId))
+  getSitter: (sitterId)=>dispatch(getSitter(sitterId))
   }
 )
 
