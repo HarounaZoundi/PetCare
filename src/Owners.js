@@ -6,7 +6,7 @@ const Owners= (props)=>{
    <div>
         <div>
     <Link to ={`/Owners/${props.Owners.id}`}>
-     <h4>{props.Owners.name}
+     <h4>{props.owner.firstName} {props.owner.firstName}
      </h4>
      </Link>
      </div>

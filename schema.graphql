@@ -1,6 +1,6 @@
 type Query  {
   test: String,
-  profile(id:ID!): [Profile],
+  profile(id:ID, owner:Boolean): [Profile],
   schedule: [Schedule],
   pet: Pet,
   connection: [Connection],
@@ -8,9 +8,13 @@ type Query  {
 },
 
 type Profile {
-  id: ID!,
+  id: ID,
   firstName: String,
-  lastName: String
+  lastName: String,
+  address: String,
+  fbId: String,
+  img: String,
+  reason: String
   owner: Boolean,
   createDate: Int
 },
@@ -21,7 +25,7 @@ type Location {
 },
 
 type Schedule {
-  id: ID!,
+  id: ID,
   petId: Int,
   startTime: Int,
   endTime: Int,

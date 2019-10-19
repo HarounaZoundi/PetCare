@@ -1,9 +1,15 @@
-import Axios from 'axios'
+import Axios from 'axios';
+import {ApolloClient, HttpLink, InMemoryCache} from 'apollo-boost';
+import gql from 'graphql-tag';
+
+const endPointUrl = 'http://localhost:9000/graphql'
+const client = new ApolloClient({
+   link: new HttpLink({uri:endPointUrl}),
+   cache:new InMemoryCache()
+});
 
 const GOT_OWNERS = 'GOT_OWNERS'
 const GOT_OWNER = 'GOT_OWNER'
-const ADDED_OWNER =' ADDED_OWNER'
-const UPDATED_OWNER = 'UPDATED_OWNER'
 
 
 const gotOwners =(owners)=>({
@@ -14,40 +20,33 @@ const gotOwners =(owners)=>({
   type: GOT_OWNER,
   owner
  })
- const addedOwner =(owner)=>({
-   type: ADDED_OWNER,
-   owner
- })
-
- const updatedOwner =(owner)=>({
-   type: UPDATED_OWNER,
-   owner
- })
 
  export const getOwners = ()=>{
   return async(dispatch)=>{
-    const{data} = await Axios.get('/graphql') //need to add the right api
+  const query = gql`
+     {
+       profile(owner: true){
+         firstName
+         lastName
+         img
+       }
+     }`
+    const{data} = await client.query({query}) //need to add the right api
     dispatch(gotOwners(data))
   }
  }
  export const getOwner =(ownerId)=>{
   return async(dispatch)=>{
-    const{data} = await Axios.get(`/api/owners/${ownerId}`)
+    const query = gql`
+         {
+           profile(id: ${ownerId}){
+             firstName
+             lastName
+           }
+         }`
+    const{data} = await client.query({query}) //need to add the right api
     dispatch(gotOwner(data))
  }
-}
- export const addOwner=(owner)=>{
-   return async(dispatch)=>{
-     const {data}= await Axios.post('/api/owners',owner)//need to add the right api
-     dispatch(addedOwner(data))
-   }
- }
-
-export const updateOwner=(owner,ownerId)=>{
-  return async(dispatch)=>{
-    const {data} =await Axios.put(`/api/owners/${ownerId}`,owner)//need to add the right api
-    dispatch(updatedOwner(data))
-  }
 }
 
 export const ownersReducer = (state =[], action) => {
@@ -55,10 +54,6 @@ export const ownersReducer = (state =[], action) => {
     case GOT_OWNERS:
       return  action.owners
     case GOT_OWNER:
-      return action.owner
-    case ADDED_OWNER:
-      return [...state, action.owner]
-    case UPDATED_OWNER:
       return action.owner
     default:
       return state

@@ -16,7 +16,8 @@
     "graphql": "^0.13.2",
     "graphql-tools": "^3.1.1",
     "notarealdb": "^0.2.2",
-    "react-redux": "latest"
+    "react-redux": "latest",
+    "react-router-dom": "latest"
   },
   "devDependencies": {
     "nodemon": "1.17.1"
