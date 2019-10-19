@@ -25,6 +25,7 @@ const gotOwners =(owners)=>({
   const query = gql`
      {
        profile(owner: true){
+         id,
          firstName,
          lastName,
          img,
@@ -41,6 +42,7 @@ const gotOwners =(owners)=>({
     const query = gql`
          {
            profile(id: ${profileId}){
+             id,
              firstName,
              lastName,
              img,

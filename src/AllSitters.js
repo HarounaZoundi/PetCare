@@ -24,7 +24,7 @@ class AllSitters extends React.Component{
 
 const mapStateToProps = (state,ownProps) =>{
 return ({
-  sitters: state.sitters,
+  sitters: state.sitters.profile || [],
   paramId : ownProps.match.params.sitterId
 })
 }

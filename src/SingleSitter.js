@@ -8,7 +8,8 @@ class SingleSitter extends React.Component{
     this.handleClick =this.handleClick.bind(this)
   }
   componentDidMount(){
-    this.props.getOwner(this.props.paramId)
+
+    this.props.getSitter(this.props.paramId)
   }
   handleClick(event){
     event.preventDefault()
@@ -16,18 +17,20 @@ class SingleSitter extends React.Component{
   }
 
  render(){
-   const sitter= this.props.sitters
+   const { sitters =[] } = this.props
+   console.log('dsfsdfsffds', sitters.profile
+   )
    return (
    <main>
   <div >
   <h1>Sitter Information</h1>
-    <h2>Name: {sitter.firstName} {sitter.firstName}</h2>
-    <img src={sitter.img}/>
+    <h2>Name: {sitters.firstName} {sitters.lasttName}</h2>
+    <img src={sitters.img}/>
     <h3>Reason I want to PetSit:</h3>
-    <p>{sitter.reason}</p>
-    <h3>Address: {sitter.address}</h3>
+    <p>{sitters.reason}</p>
+    <h3>Address: {sitters.address}</h3>
     <h3>Facebook Id:</h3>
-    <a href={sitter.fbId}/>
+    <a href={sitters.fbId}/>
   </div>
   <button onClick={this.handleClick}>Aprrove</button>
   </main>
@@ -37,7 +40,6 @@ class SingleSitter extends React.Component{
 }
 
 const mapStateToProps =(state,ownProps) =>{
-
   return({
     paramId:ownProps.match.params.sitterId,
     sitters: state.sitters

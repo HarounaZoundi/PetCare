@@ -17,7 +17,7 @@ const App = () => {
         <Route exact path ='/owners' component={AllOwners}/>
         <Route  exact path ='/sitters' component={AllSitters}/>
         <Route exact path= '/owners/:ownerId' component={SingleOwner}/>
-        <Route exact path= '/sitters/:sitterId' component={SingleSitter}/>
+        <Route exact path= '/sitters/:sitterId' render={(props) => <SingleSitter { ...props }/>} />
      </Switch>
    </div>
    </Router>

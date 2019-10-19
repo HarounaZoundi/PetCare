@@ -26,6 +26,7 @@ const gotSitters =(sitters)=>({
      const query = gql`
          {
            profile(owner: false){
+             id,
              firstName,
              lastName,
              img,
@@ -43,6 +44,7 @@ const gotSitters =(sitters)=>({
     const query = gql`
              {
                profile(id: ${profileId}){
+                id,
                 firstName,
                 lastName,
                 img,
