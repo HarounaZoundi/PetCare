@@ -21,11 +21,11 @@ class SingleOwner extends React.Component{
    <main>
   <div>
   <h1>Owner Information</h1>
-    <h2>Name: {owner.name}</h2>
-    <img src={owner.imageUrl}/>
+    <h2>Name: {owner.firstName} {owner.lastName} </h2>
+    <img src={owner.img}/>
     <h3>Address: {owner.address}</h3>
     <h3>Facebook Id:</h3>
-    <p>{owner.fbId}</p>
+    <a href= {owner.fbId}/>
   </div>
   <button onClick={this.handleClick}>Request</button>
   </main>
