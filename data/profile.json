@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "firstName": "Joe",
+    "lastName": "Smoe",
+    "owner": true,
+    "createDate": 1571492436
+  },
+  {
+    "id": "2",
+    "firstName": "Jae",
+    "lastName": "Smae",
+    "owner": false,
+    "createDate": 1571492436
+  }
+]
