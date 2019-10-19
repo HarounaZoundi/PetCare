@@ -1,7 +1,7 @@
 import React from 'react'
 import Sitters from './Sitters'
 import { connect } from 'react-redux'
-import { getSitters} from '../reducers/sitterReducer'
+import { getSitters} from './Reducers/sitterReducer'
 
 class AllSitters extends React.Component{
 

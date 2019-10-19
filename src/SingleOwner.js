@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect }  from 'react-redux'
-import { getOwner} from './reducers/ownerReducer'
+import { getOwner } from './Reducers/ownerReducer'
 
 class SingleOwner extends React.Component{
   constructor(props){
@@ -27,7 +27,7 @@ class SingleOwner extends React.Component{
     <h3>Facebook Id:</h3>
     <p>{owner.fbId}</p>
   </div>
-  <button onClick={handleClick}>Request</button>
+  <button onClick={this.handleClick}>Request</button>
   </main>
 
 )

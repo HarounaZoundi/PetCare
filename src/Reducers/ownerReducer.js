@@ -26,13 +26,13 @@ const gotOwners =(owners)=>({
 
  export const getOwners = ()=>{
   return async(dispatch)=>{
-    const{data} = await client.query('/graphql') //need to add the right api
+    const{data} = await Axios.get('/graphql') //need to add the right api
     dispatch(gotOwners(data))
   }
  }
  export const getOwner =(ownerId)=>{
   return async(dispatch)=>{
-    const{data} = await client.query(`/api/owners/${ownerId}`)
+    const{data} = await Axios.get(`/api/owners/${ownerId}`)
     dispatch(gotOwner(data))
  }
 }
