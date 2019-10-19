@@ -25,7 +25,7 @@ class AllOwners extends React.Component{
 
 const mapStateToProps = (state,ownProps) =>{
 return ({
-  Owners: state.Owners,
+  Owners: state.owners,
   paramId : ownProps.match.params.ownerId
 })
 }
