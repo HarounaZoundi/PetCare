@@ -36,15 +36,19 @@
 	        version    : 'v4.0'
 	      });
       
-	      FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
-			  console.log(response.status);
-			  if(response.status === 'connected'){
-				  if(!window.location.href.includes('second')) {
-				  	window.location.href = "/secondpage"
-				  }  
-			  }
+		  setInterval(function(){ 
+		      FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+				  console.log(response.status);
+				  if(response.status === 'connected'){
+					  if(!window.location.href.includes('second')) {
+					  	window.location.href = "/secondpage"
+					  }  
+				  }
 
-	      });
+		      });
+		  
+		   }, 3000);
+	      
 	    };
 
 	    (function(d, s, id){
