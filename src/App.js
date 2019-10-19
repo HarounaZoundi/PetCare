@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import Home from './Home'
 import AllOwners from './AllOwners'
@@ -10,14 +9,13 @@ import SingleOwner from './SingleOwner';
 import SingleSitter from './SingleSitter';
 import UpdateOwner from './UpdateOwner'
 import UpdateSitter from './UpdateSitter'
-import Navbar from './Navbar'
-import Error from './Error'
+
+
 
 const App = () => {
  return (
    <Router>
       <div>
-     <Navbar/>
      <Switch>
         <Route exact path ='/' component ={Home} />
         <Route exact path ='/owners' component={AllOwners}/>
@@ -26,7 +24,6 @@ const App = () => {
         <Route exact path= '/sitters/:sitterId' component={SingleSitter}/>
         <Route exact path= '/owners/:ownerId' component={UpdateOwner}/>
         <Route exact path= '/sitters/:sitterId' component={UpdateSitter}/>
-        <Route component={Error}/>
      </Switch>
    </div>
    </Router>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Owners from './Owners'
 import { connect } from 'react-redux'
-import { getOwners} from './reducers/ownerReducer'
+import { getOwners } from './Reducers/ownerReducer'
 import { getSitter} from './Reducers/sitterReducer'
 
 class AllOwners extends React.Component{
@@ -32,7 +32,7 @@ return ({
 
 const mapDispatchToProps = dispatch=>(
  {getOwners:()=>dispatch(getOwners()),
-  getSitter: ()=>dispatch(getSitter(sitterId))
+  getSitter: ()=>dispatch(getSitter(1))
   }
 )
 
