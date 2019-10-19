@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect }  from 'react-redux'
-import { getOwner} from './reducers/ownerReducer'
+import { getOwner } from './Reducers/ownerReducer'
 
 class SingleOwner extends React.Component{
   constructor(props){

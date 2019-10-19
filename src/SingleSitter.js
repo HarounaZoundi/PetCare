@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect }  from 'react-redux'
-import { getSitter} from './reducers/sitterReducer'
+import { getSitter} from './Reducers/sitterReducer'
 
 class SingleSitter extends React.Component{
   constructor(props){
