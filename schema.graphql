@@ -1,0 +1,48 @@
+type Query  {
+  test: String,
+  profile(id:ID!): [Profile],
+  schedule: [Schedule],
+  pet: Pet,
+  connection: [Connection],
+  notification: Notification
+},
+
+type Profile {
+  id: ID!,
+  firstName: String,
+  lastName: String
+  owner: Boolean,
+  createDate: Int
+},
+
+type Location {
+  lat: Float,
+  long: Float
+},
+
+type Schedule {
+  id: ID!,
+  petId: Int,
+  startTime: Int,
+  endTime: Int,
+  location: Location
+},
+
+type Pet {
+  id: ID!,
+  profileId: ID,
+  name: String,
+  photoId: Int
+},
+
+type Connection {
+  ownerId: ID,
+  nonOwnerId: ID,
+  scheduleId: Int
+},
+
+type Notification {
+  ownerId: ID,
+  nonOwnerId: ID
+}
+
