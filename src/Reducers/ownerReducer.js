@@ -1,4 +1,3 @@
-import Axios from 'axios';
 import {ApolloClient, HttpLink, InMemoryCache} from 'apollo-boost';
 import gql from 'graphql-tag';
 
@@ -26,22 +25,27 @@ const gotOwners =(owners)=>({
   const query = gql`
      {
        profile(owner: true){
-         firstName
-         lastName
-         img
+         firstName,
+         lastName,
+         img,
+         fbId,
+         address
        }
      }`
     const{data} = await client.query({query}) //need to add the right api
     dispatch(gotOwners(data))
   }
  }
- export const getOwner =(ownerId)=>{
+ export const getOwner =(profileId)=>{
   return async(dispatch)=>{
     const query = gql`
          {
-           profile(id: ${ownerId}){
-             firstName
-             lastName
+           profile(id: ${profileId}){
+             firstName,
+             lastName,
+             img,
+             fbId,
+             address
            }
          }`
     const{data} = await client.query({query}) //need to add the right api
