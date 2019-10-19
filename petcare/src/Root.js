@@ -1,7 +1,3 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
 
 import React from 'react'
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
@@ -15,7 +11,7 @@ import UpdateSitter from './UpdateSitter'
 import Navbar from './Navbar'
 import Error from './Error'
 
-const App = () => {
+const Root = () => {
  return (
    <Router>
       <div>
@@ -36,4 +32,4 @@ const App = () => {
  )
 }
 
-export default App;
+export default Root
