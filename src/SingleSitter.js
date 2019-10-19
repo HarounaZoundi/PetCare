@@ -21,11 +21,13 @@ class SingleSitter extends React.Component{
    <main>
   <div >
   <h1>Sitter Information</h1>
-    <h2>Name: {sitter.name}</h2>
-    <img src={sitter.imageUrl}/>
+    <h2>Name: {sitter.firstName} {sitter.firstName}</h2>
+    <img src={sitter.img}/>
+    <h3>Reason I want to PetSit:</h3>
+    <p>{sitter.reason}</p>
     <h3>Address: {sitter.address}</h3>
     <h3>Facebook Id:</h3>
-    <p>{sitter.fbLink}</p>
+    <a href={sitter.fbId}/>
   </div>
   <button onClick={this.handleClick}>Aprrove</button>
   </main>
