@@ -7,7 +7,7 @@ const SecondPage = () => {
           <h3>Please Select: </h3>
       </div>
       <div>
-          <img height ='200px' width ='200px' src='download.png'/>
+          <img height ='200px' width ='200px' src="download.png"/>
       </div>
       <div>
           <Link to='/owners'>I'm a Pet Sitter</Link>
