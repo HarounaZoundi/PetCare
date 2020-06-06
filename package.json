@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "apollo-boost": "^0.4.4",
-    "apollo-server-express": "^1.4.0",
+    "apollo-server-express": "^2.14.2",
     "axios": "latest",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
